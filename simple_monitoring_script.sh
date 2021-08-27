@@ -1,4 +1,5 @@
 #!/bin/bash
+# use this script to monitor your classic-ec2 instances (before the vpc era)
 echo "-------------------------------------------"
 echo "Server_Name   CPU(%)   Memory(%)   Disk(%)"
 echo "-------------------------------------------"

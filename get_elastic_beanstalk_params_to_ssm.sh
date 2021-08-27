@@ -1,6 +1,7 @@
 #!/bin/bash
+# $1 is env name. $2 is app name
 echo "Getting environment vars from EB"
-aws elasticbeanstalk describe-configuration-settings --environment-name coing-prod-5 --application-name coing-new | jq '.ConfigurationSettings | .[].OptionSettings | .[] | if .OptionName == "EnvironmentVariables" and .Namespace == "aws:cloudformation:template:parameter" then .Value else ""end' > dataVars
+aws elasticbeanstalk describe-configuration-settings --environment-name $1 --application-name $2 | jq '.ConfigurationSettings | .[].OptionSettings | .[] | if .OptionName == "EnvironmentVariables" and .Namespace == "aws:cloudformation:template:parameter" then .Value else ""end' > dataVars
 echo "Wait While I'm parsing the Vars"
 cat dataVars | tr -d '"' | tr -d '\n' > dataVars
 sed -i 's/,/\n/g' dataVars
