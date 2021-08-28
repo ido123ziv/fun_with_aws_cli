@@ -12,7 +12,10 @@ To use the script run the following:
 ./get_elastic_beanstalk_params_to_ssm.sh your_env_name your_app_name
 ```
 
-Enjoy!
+###Enjoy!
+
+#### Fun Fact
+I like to use `aws ssm` which is AWS System Manager service, you can find in this repo a lot of commands and scripts that uses it but no specific folder needed, `ssm` is out there helping to all other service because it is awesome.
 
 ## Prerequisites
 * install aws-cli
